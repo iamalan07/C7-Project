@@ -6,7 +6,7 @@ terraform {
     }
   }
 backend "s3" {
-    bucket = "c7"
+    bucket = "c7project"
     key    = "assignment/tfstate"
     region = "us-east-1"
   }
