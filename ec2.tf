@@ -18,7 +18,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name      = "raahul-key"
+  key_name      = "finalproject"
   vpc_security_group_ids = [aws_security_group.ingress-all-test.id]
   subnet_id = module.vpc.public_subnets[0]
  tags = {
@@ -51,7 +51,7 @@ data "aws_ami" "ubuntu2" {
 resource "aws_instance" "jenkins" {
   ami           = data.aws_ami.ubuntu2.id
   instance_type = "t2.micro"
-  key_name      = "raahul-key"
+  key_name      = "finalproject"
   vpc_security_group_ids = [aws_security_group.ingress-all.id]
   subnet_id = module.vpc.private_subnets[0]
  tags = {
@@ -83,7 +83,7 @@ data "aws_ami" "ubuntu1" {
 resource "aws_instance" "app" {
   ami           = data.aws_ami.ubuntu1.id
   instance_type = "t2.micro"
-  key_name      = "raahul-key"
+  key_name      = "finalproject"
   vpc_security_group_ids = [aws_security_group.ingress-all-sg.id]
   subnet_id = module.vpc.private_subnets[1]
  tags = {
